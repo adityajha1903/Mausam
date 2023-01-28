@@ -18,3 +18,7 @@
   <img src="https://github.com/adityajha1903/Mausam/blob/master/extras/6img.jpg?raw=true" width="130" alt="Mausam">
   <img src="https://github.com/adityajha1903/Mausam/blob/master/extras/7img.jpg?raw=true" width="130" alt="Mausam">
 </p>
+
+
+## Download APK
+  [Mausam.apk](https://drive.google.com/file/d/1cS3kqZcfjQ6HSIgXstF0yprQvJGo97wn/view?usp=sharing)
