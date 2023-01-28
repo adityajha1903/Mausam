@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_dialog_bg">
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/search_place"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_new_location"
+        android:textColor="#DDDBDF"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tILocation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/name"
+        android:textColorHint="#C0C2C5"
+        app:errorEnabled="true"
+        app:boxStrokeColor="#FAD000"
+        app:hintTextColor="#FAD000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv"
+        app:startIconCheckable="true"
+        app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+        app:startIconTint="#C0C2C5">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eTLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+        </androidx.appcompat.widget.AppCompatEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tILatitude"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/latitude"
+        android:textColorHint="#C0C2C5"
+        app:boxStrokeColor="#FAD000"
+        app:hintTextColor="#FAD000"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        app:layout_constraintEnd_toStartOf="@+id/ll_getLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tILocation"
+        app:startIconCheckable="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eTLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal|numberSigned"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+        </androidx.appcompat.widget.AppCompatEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tILongitude"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/longitude"
+        android:textColorHint="#C0C2C5"
+        app:boxStrokeColor="#FAD000"
+        app:hintTextColor="#FAD000"
+        app:layout_constraintEnd_toStartOf="@id/ll_getLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tILatitude"
+        app:startIconCheckable="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eTLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+        </androidx.appcompat.widget.AppCompatEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_getLocation"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/tILatitude"
+        app:layout_constraintBottom_toBottomOf="@+id/tILongitude"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/presentLocationIB"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_get_present_location_bg"
+            android:contentDescription="@string/get_present_location"
+            android:elevation="10dp"
+            android:padding="13dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_location_on_24"/>
+
+        <TextView
+            android:id="@+id/tv_getLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_nlocation"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+    <ImageButton
+        android:id="@+id/addLocationToDatabase"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_get_present_location_bg"
+        android:contentDescription="@string/add_to_start_page"
+        android:elevation="10dp"
+        android:padding="13dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tILongitude"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add_to_start_page"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/addLocationToDatabase"
+        app:layout_constraintStart_toStartOf="@id/addLocationToDatabase"
+        app:layout_constraintTop_toBottomOf="@id/addLocationToDatabase" />
+
+    <ImageButton
+        android:id="@+id/cancelIB"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="58dp"
+        android:background="@drawable/ic_get_present_location_bg"
+        android:contentDescription="@string/add_to_start_page"
+        android:elevation="10dp"
+        android:padding="13dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_cancel_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tILongitude"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cancelIB"
+        app:layout_constraintStart_toStartOf="@id/cancelIB"
+        app:layout_constraintTop_toBottomOf="@id/cancelIB" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
