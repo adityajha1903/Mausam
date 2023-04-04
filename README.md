@@ -1,3 +1,6 @@
+# Mausam
+*Description*
+
 ## Animations
 <p float="left">  
   <img src="https://raw.githubusercontent.com/adityajha1903/Mausam/master/extras/1gif.gif" width="130" alt="Mausam">
